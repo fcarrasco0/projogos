@@ -40,6 +40,58 @@ Carry out sitting on a chair:
 Report sitting on a chair:
 	say "You feel confortable".
 
+Section 2;2 Alarm
+
+A alarm is a kind of thing.
+
+Alarm clock is a alarm. Alarm clock is on Bed table.
+
+AlarmSetted is a truth state that varies. AlarmSetted is false.
+
+
+Understand the command "set" as something new.
+Setting is an action applying to one thing.
+Understand "set  [something]" as setting.
+
+Report setting a alarm:
+	say "it will be noisy, you better run".
+	
+
+A person has a room called destination.
+The destination of Sargeant is Home Office.
+
+After setting Alarm clock:
+	if AlarmSetted is false:
+		now the destination of Sargeant is Large Bedroom;
+		[now the destination of Sargeant is Living room;]
+		[ destination of Sargeant is Large Room; ]
+		now AlarmSetted is true;
+		continue the action;
+	otherwise:
+		say "it's already setted"
+
+Every turn when the destination of Sargeant is not the location of Sargeant: [sargento está se movendo]
+	if the location of Sargeant is Home Office and destination of Sargeant is not Home Office: [abrir a porta pro sargento passar]
+		now the Home Office door is unlocked;
+		say "HO door unlocked"; [DEBUG]
+	if the location of Sargeant is Living Room and destination of Sargeant is not Home Office:
+		now the Home Office door is locked;
+		now the Home Office door is closed;
+		say "HO door locked"; [DEBUG]
+	if the location of Sargeant is Living Room and destination of Sargeant is Home Office:
+		now the Home Office door is unlocked;
+		say "HO door unlocked"; [DEBUG]
+	let the right direction be the best route from the location of Sargeant to the destination of Sargeant, using even locked doors;
+	if the right direction is a direction, try Sargeant going the right direction;
+	say "sargs moves from [location of Sargeant] in [right direction] direction to [destination of Sargeant]!"; [DEBUG]
+	if location of Sargeant is the location of player:
+		say "Sargeant finds you, now you're dead";
+	if Sargeant is in an adjacent room:
+		say "You hear some steps from [Location of Sargeant]";
+		
+
+
+
 Chapter 2 Geography
 
 Section 2.1 The House
@@ -50,7 +102,7 @@ Porch is a room.  "It's dark, you can't be seen out here. You can see an armed g
 
 Hall is a room.  "You see a dark room at north and hear sounds like a radio from the Lavabo at east.".
 Main door is a door. It is north of Porch and south of Hall. Main door is closed and locked.
-The matching key of the Main door is Main key.
+The matching key  of the Main door is Main key.
 
 Lavabo is a room. "Fuck! There's someone using the bathroom! You got shot and die. GAME OVER".
 Lavabo door is a door. It is east of Hall and west of Lavabo. Lavabo door is closed and unlocked.
@@ -68,7 +120,7 @@ Kitchen door is a door. It is north of Garage and south of Kitchen. Kitchen door
 Dining Room is a room. Dining room is east of kitchen. Dining Room is north of Living Room.
 
 Home Office is a room.  "Finally found you Colonel. He looks beaten up and is unawake."
-Home office door is a door. It is west of Home Office and east of Living Room. Home office door is closed and locked. The matching key of the Home office door is Spare key. 
+Home office door is a door. It is west of Home Office and east of Living Room. Home office door is closed and locked.The matching key  of the Home office door is Spare key.
 
 Stairs is a staircase. It is above Hall and below Upper Hall.
 
@@ -118,14 +170,23 @@ Private2 is a person. Private2 is in Lavabo.
 
 Corporal is a person. Corporal is in Kitchen.
 
-Sargeant is a person. Sargeant is in Home Office.
+Sargeant is a person. Sargeant is in Home Office. 
 
 Liuetenant is a person. Liutenant is in Inner Bathroom.
 
 [key itens]
 Spare key is in Large Bedroom.
 
-Colonel is a thing.
+Bed table is a table. Bed table is in Large Bedroom.
+
+Colonel is a thing. Colonel is in Home Office.
+
+
+Carry out sitting on a chair:
+	silently try entering the noun.
+
+Report sitting on a chair:
+	say "You feel confortable".
 
 Section 3.1 On the Porch
 
