@@ -17,7 +17,7 @@ Section 1.3 The Table
 
 A table is a kind of supporter that is enterable with carrying capacity 2.
 
-Section 2;1 Chairs
+Section 1.4 Chairs
 
 A chair is a kind of supporter that is enterable with carrying capacity 1. 
 Definition: A chair is occupied if something is on it.
@@ -31,8 +31,8 @@ Check an actor sitting on a thing:
 	If the noun is occupied, say "You can't sit in the [the noun], it is occupied" instead;
 	If the noun is not enterable, say "You can't sit on [the noun]" instead.
 
-Check an actor entering a thing:
-	If the thing is occupied, say "You can't sit in a occupied chair" instead;
+Check an actor entering a chair:
+	If the chair is occupied, say "You can't sit in a [the noun]" instead;
 
 Carry out sitting on a chair:
 	silently try entering the noun.
@@ -62,10 +62,11 @@ Garage is a room. "The garage door is wide open. It's too dark in here and I don
 Garage door is a door. It is southeast of Garage and northwest of Porch. Garage door is open and unlocked.
 Living room door is a door. It is east of Garage and west of Living Room. Living room door is closed and unlocked.
 
-Kitchen is a room. "The corporal noticed you! Before you try to run he pulls the gun out of the holster and shoot you.  GAME OVER".
+Kitchen is a room. 
 Kitchen door is a door. It is north of Garage and south of Kitchen. Kitchen door is closed and unlocked.
+Kitchen portal is a door. It is west of dining room and east of Kitchen. Kitchen door is closed and unlocked.
 
-Dining Room is a room. Dining room is east of kitchen. Dining Room is north of Living Room.
+Dining Room is a room. Dining Room is north of Living Room.
 
 Home Office is a room.  "Finally found you Colonel. He looks beaten up and is unawake."
 Home office door is a door. It is west of Home Office and east of Living Room. Home office door is closed and locked. The matching key of the Home office door is Spare key. 
@@ -138,25 +139,38 @@ bucket is in Porch.
 candle is a thing. string is a thing. bucket is a container.
 candle, string, Main key are in bucket.
 
-
-
 Chapter 4 What Happens when entering(Scenes)
 
 Being Outside the House is a Scene. 
 Being Outside the House begins when play begins.
-Being Outside the House ends when player is in Hall.
+Being Outside the House ends when player is in Hall. 
 
 Getting Info is a Scene.
 Getting Info begins when Being Outside the House ends.
+Getting Info ends when player has Spare key.
 
+Rescuing Coronel is a Scene.
+Rescuing Coronel begins when Getting Info ends. "Nelson I'm comming buddy!".
 
+Escaping the House is a Scene.
+Escaping the House begins when Rescuing Coronel ends. "Let's get the fuck out of here!".
 
+	
 Before taking the Main Key during Being Outside the House:
 	Say "A chill runs up your spine. You look at the private when he turns to you but he's still sleeping. Lucky me.".
 	
-
+Before taking the Spare Key during Getting Info:
+	Say "You hear a huge noise downstairs like a shot was fired and think 'this is it, they killed him and I'm next!'. But before you could even  act you hear laughters by all soldiers downstairs, and you can feel the tension leaving your body..."
 	
-
+[End Games not so happily]
+After opening Lavabo door:
+	end the story saying "Fuck! There's someone using the bathroom! You got shot and die. GAME OVER".
 	
+After opening Kitchen door:
+	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER".
 	
+After opening Kitchen portal:
+	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER".
+	
+if player is in Living Room, end the story saying "DEAD".
 	
