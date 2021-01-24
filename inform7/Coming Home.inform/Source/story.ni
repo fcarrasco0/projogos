@@ -52,7 +52,7 @@ Hall is a room.  "You see a dark room at north and hear sounds like a radio from
 Main door is a door. It is north of Porch and south of Hall. Main door is closed and locked.
 The matching key of the Main door is Main key.
 
-Lavabo is a room. "Fuck! There's someone using the bathroom! You got shot and die. GAME OVER".
+Lavabo is a room.
 Lavabo door is a door. It is east of Hall and west of Lavabo. Lavabo door is closed and unlocked.
 
 Living Room is a room. "The room is lit only by the muted TV light. You can hear voices at east, one of wich is Colonel's voice.".
@@ -163,7 +163,7 @@ Before taking the Spare Key during Getting Info:
 	Say "You hear a huge noise downstairs like a shot was fired and think 'this is it, they killed him and I'm next!'. But before you could even  act you hear laughters by all soldiers downstairs, and you can feel the tension leaving your body..."
 	
 [End Games not so happily]
-After opening Lavabo door:
+After opening Lavabo door during Getting Info:
 	end the story saying "Fuck! There's someone using the bathroom! You got shot and die. GAME OVER".
 	
 After opening Kitchen door:
@@ -171,6 +171,4 @@ After opening Kitchen door:
 	
 After opening Kitchen portal:
 	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER".
-	
-if player is in Living Room, end the story saying "DEAD".
 	
