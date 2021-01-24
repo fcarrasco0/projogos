@@ -66,7 +66,8 @@ Kitchen is a room.
 Kitchen door is a door. It is north of Garage and south of Kitchen. Kitchen door is closed and unlocked.
 Kitchen portal is a door. It is west of dining room and east of Kitchen. Kitchen door is closed and unlocked.
 
-Dining Room is a room. Dining Room is north of Living Room.
+Dining Room is a room. 
+Dining Room door is a door. It is north of Living room and south of Dining Room. Dining Room door is closed and unlocked.
 
 Home Office is a room.  "Finally found you Colonel. He looks beaten up and is unawake."
 Home office door is a door. It is west of Home Office and east of Living Room. Home office door is closed and locked. The matching key of the Home office door is Spare key. 
@@ -157,18 +158,33 @@ Escaping the House begins when Rescuing Coronel ends. "Let's get the fuck out of
 
 	
 Before taking the Main Key during Being Outside the House:
-	Say "A chill runs up your spine. You look at the private when he turns to you but he's still sleeping. Lucky me.".
+	Say "A chill runs up your spine. You look at the private when he turns to you but he's still sleeping. Lucky me."
+
 	
 Before taking the Spare Key during Getting Info:
 	Say "You hear a huge noise downstairs like a shot was fired and think 'this is it, they killed him and I'm next!'. But before you could even  act you hear laughters by all soldiers downstairs, and you can feel the tension leaving your body..."
 	
+After taking the Spare Key:
+	now Private1 is in Dining room;
+	now Sargeant is in Dining room;
+	now Private2 is in Dining room;
+	continue the action;
+	
+	
 [End Games not so happily]
 After opening Lavabo door during Getting Info:
 	end the story saying "Fuck! There's someone using the bathroom! You got shot and die. GAME OVER".
+
+After opening Dining room door during Rescuing Coronel:
+	end the story saying "Fuck! 3 armed guards were laughing, but that was not enough for them not to shoot you. You are dead. GAME OVER".
+	
+After opening Dining room door during Escaping the House:
+	end the story saying "Fuck! 3 armed guards were laughing, but that was not enough for them not to shoot you and the coronel. You are dead. GAME OVER".
 	
 After opening Kitchen door:
 	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER".
 	
 After opening Kitchen portal:
 	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER".
+
 	
