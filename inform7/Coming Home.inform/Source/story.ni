@@ -55,7 +55,7 @@ The matching key of the Main door is Main key.
 Lavabo is a room.
 Lavabo door is a door. It is east of Hall and west of Lavabo. Lavabo door is closed and unlocked.
 
-Living Room is a room. "The room is lit only by the muted TV light. You can hear voices at east, one of wich is Colonel's voice.".
+Living Room is a room. "The room is lit only by the muted TV light.".
 Living room is north of Hall.
 
 Garage is a room. "The garage door is wide open. It's too dark in here and I don't want to make any noise. Better not touch anything. You can hear Kitchen sounds at north.".
@@ -69,7 +69,7 @@ Kitchen portal is a door. It is west of dining room and east of Kitchen. Kitchen
 Dining Room is a room. 
 Dining Room door is a door. It is north of Living room and south of Dining Room. Dining Room door is closed and unlocked.
 
-Home Office is a room.  "Finally found you Colonel. He looks beaten up and is unawake."
+Home Office is a room.  "A Home office like any other ." [MELHORAR DESCRICAO]
 Home office door is a door. It is west of Home Office and east of Living Room. Home office door is closed and locked. The matching key of the Home office door is Spare key. 
 
 Stairs is a staircase. It is above Hall and below Upper Hall.
@@ -127,7 +127,7 @@ Liuetenant is a person. Liutenant is in Inner Bathroom.
 [key itens]
 Spare key is in Large Bedroom.
 
-Colonel is a thing.
+Coronel is a thing. Coronel is in Home office.
 
 Section 3.1 On the Porch
 
@@ -139,6 +139,26 @@ bucket is in Porch.
 
 candle is a thing. string is a thing. bucket is a container.
 candle, string, Main key are in bucket.
+
+Section 3.2 Coronel actions
+
+Understand the command "untie" as something new.
+untying is an action applying to one thing.
+
+Understand "untie [something]" as untying.
+
+CoronelUntied is a truth state that varies. CoronelUntied is false.
+
+After untying Coronel:
+	if CoronelUntied is false:
+		now CoronelUntied is true;
+		say "You hahe untied Coronel";
+		continue the action;
+	otherwise:
+		say "he was already untied"
+		
+Every turn when CoronelUntied is true:
+	now Coronel is in the location of player;
 
 Chapter 4 What Happens when entering(Scenes)
 
@@ -152,6 +172,7 @@ Getting Info ends when player has Spare key.
 
 Rescuing Coronel is a Scene.
 Rescuing Coronel begins when Getting Info ends. "Nelson I'm comming buddy!".
+Rescuing Coronel ends when CoronelUntied is true;
 
 Escaping the House is a Scene.
 Escaping the House begins when Rescuing Coronel ends. "Let's get the fuck out of here!".
@@ -168,23 +189,30 @@ After taking the Spare Key:
 	now Private1 is in Dining room;
 	now Sargeant is in Dining room;
 	now Private2 is in Dining room;
-	continue the action;
 	
-	
+Every turn when the location of player is Living room:
+	if Sargeant is in Home office and Coronel is in Home office:
+		say "You can hear voices at east, one of wich is Colonel's voice.";
+
 [End Games not so happily]
 After opening Lavabo door during Getting Info:
-	end the story saying "Fuck! There's someone using the bathroom! You got shot and die. GAME OVER".
+	end the story saying "Fuck! There's someone using the bathroom! You got shot and die. GAME OVER";
+	continue the action;
 
 After opening Dining room door during Rescuing Coronel:
-	end the story saying "Fuck! 3 armed guards were laughing, but that was not enough for them not to shoot you. You are dead. GAME OVER".
+	end the story saying "Fuck! 3 armed guards were laughing, but that was not enough for them not to shoot you. You are dead. GAME OVER";
+	continue the action;
 	
 After opening Dining room door during Escaping the House:
-	end the story saying "Fuck! 3 armed guards were laughing, but that was not enough for them not to shoot you and the coronel. You are dead. GAME OVER".
+	end the story saying "Fuck! 3 armed guards were laughing, but that was not enough for them not to shoot you and the coronel. You are dead. GAME OVER";
+	continue the action;
 	
 After opening Kitchen door:
-	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER".
+	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER";
+	continue the action;
 	
 After opening Kitchen portal:
-	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER".
+	end the story saying "Fuck! The corporal noticed you! Before you try to run he pulls the gun out of the holster and BANG! You are dead.  GAME OVER";
+	continue the action;
 
 	
