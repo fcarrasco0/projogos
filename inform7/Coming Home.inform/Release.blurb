@@ -1,20 +1,23 @@
 ! Blurb file created by Inform build 6M62
 
-status "C:\Program Files (x86)\Inform 7\Internal\Miscellany\CblorbModel.html" "C:\Users\ferna\OneDrive\Área de Trabalho\faculdade\Projogos\Coming Home.inform\Build\StatusCblorb.html"
+status "C:\Program Files (x86)\Inform 7\Internal\Miscellany\CblorbModel.html" "C:\Users\Bruno\Desktop\Coming Home.inform\Build\StatusCblorb.html"
 
 
 ! Identification
 
-project folder "C:\Users\ferna\OneDrive\Área de Trabalho\faculdade\Projogos\Coming Home.inform"
-release to "C:\Users\ferna\OneDrive\Área de Trabalho\faculdade\Projogos\Coming Home.materials\Release"
+project folder "C:\Users\Bruno\Desktop\Coming Home.inform"
+release to "C:\Users\Bruno\Desktop\Coming Home.materials\Release"
 
 ! Blorb instructions
 
 storyfile leafname "Coming Home.zblorb"
-storyfile "C:\Users\ferna\OneDrive\Área de Trabalho\faculdade\Projogos\Coming Home.inform\Build\output.z8" include
-ifiction "C:\Users\ferna\OneDrive\Área de Trabalho\faculdade\Projogos\Coming Home.inform\Metadata.iFiction" include
+storyfile "C:\Users\Bruno\Desktop\Coming Home.inform\Build\output.z8" include
+ifiction "C:\Users\Bruno\Desktop\Coming Home.inform\Metadata.iFiction" include
 cover "C:\Program Files (x86)\Inform 7\Internal\Miscellany\Cover.jpg"
 picture 1 "C:\Program Files (x86)\Inform 7\Internal\Miscellany\Cover.jpg"
+picture 3 "C:\Users\Bruno\Desktop\Coming Home.materials\Figures\shot.jpg"
+picture 4 "C:\Users\Bruno\Desktop\Coming Home.materials\Figures\Hall.png"
+picture 5 "C:\Users\Bruno\Desktop\Coming Home.materials\Figures\house.jpg"
 
 ! Placeholder variables
 
