@@ -30,6 +30,7 @@ Figure of Lose is the file "shot.jpg".
 Figure of Hall is the file "Hall.png".
 Figure of House is the file "house.jpg".
 Figure of Key  is the file "Spare Key.png".
+Figure of Coronel Nelson is the file "Coronel Nelson.png".
 
 
 Every turn when the location of player is Hall:
@@ -211,8 +212,11 @@ Understand "untie [something]" as untying.
 
 CoronelUntied is a truth state that varies. CoronelUntied is false.
 
-Before untying Colonel:
-	say "As soon as you enter in the home office you spot the Colonel in a chair with his hands behind his back."
+Every turn when The location of player is Home office and CoronelUntied is false:
+	say "As soon as you enter in the home office you spot the Colonel in a chair with his hands behind his back.";
+	display the Figure of Coronel Nelson;
+	
+[###########################################################################################]
 
 After untying Colonel:
 	if CoronelUntied is false:
