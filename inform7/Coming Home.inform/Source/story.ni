@@ -29,6 +29,11 @@ Section 1.0 Figures
 Figure of Lose is the file "shot.jpg".
 Figure of Hall is the file "Hall.png".
 Figure of House is the file "house.jpg".
+Figure of Key  is the file "Spare Key.png".
+
+
+Every turn when the location of player is Hall:
+	display the figure of Hall;
 
 Section 1.1 The Staircase
 
@@ -209,7 +214,7 @@ CoronelUntied is a truth state that varies. CoronelUntied is false.
 After untying Colonel:
 	if CoronelUntied is false:
 		now CoronelUntied is true;
-		say "You hahe untied Coronel";
+		say "You have untied Coronel";
 		continue the action;
 	otherwise:
 		say "he was already untied"
@@ -238,7 +243,10 @@ Escaping the House begins when Rescuing Coronel ends. "Let's get the fuck out of
 Before taking the Main Key during Being Outside the House:
 	Say "A chill runs up your spine. You look at the private when he turns to you but he's still sleeping. Lucky me."
 
-	
+Every turn when the location of player is Large Bedroom and the player does not have Spare Key:
+	display the Figure of Key; 
+	[############################################################################################]
+
 Before taking the Spare Key during Getting Info:
 	Say "You hear a huge noise of someone slamming a door and shouting:
 	
@@ -282,7 +290,7 @@ After opening Lavabo door during Getting Info:
 	continue the action;
 
 After opening Inner bathroom door during Getting Info:
-	display the Figure of Lose;
+	display the Figure of Lose; 
 	end the story saying "Fuck! There's someone using the bathroom! You got shot and die. GAME OVER";
 	continue the action;
 	
