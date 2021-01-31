@@ -25,6 +25,6 @@
 >sw
 ```
 
-### Para mais detalhes 
+<h5> Para mais detalhes </h5>
 <br> ver o pdf dentro da pasta inform7.
 <br> link miro: https://miro.com/app/board/o9J_lcKgiJ4=/
