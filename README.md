@@ -1,9 +1,9 @@
 # Alunos:
-Alexandre Camillo Gonçalves
-Bruno Gavarra de Araujo
-Cristiano Lopes Santos
-Fernando dos Santos Carrasco Filho
-Larissa Monteiro da Fonseca Galeno
+<br> Alexandre Camillo Gonçalves
+<br> Bruno Gavarra de Araujo
+<br> Cristiano Lopes Santos
+<br> Fernando dos Santos Carrasco Filho
+<br> Larissa Monteiro da Fonseca Galeno
 
 # Fluxo mais rápido para ganhar o jogo:
 
