@@ -94,7 +94,7 @@ Section 2.1 The House
 
 [first floor]
 
-Porch is a room.  "It's dark now, you can't be seen out here. You can see an armed guard sleeping in the chair.".
+Porch is a room.
 
 Hall is a room.  "You see a dark room at north, stairs for the second floor and hear sounds like a radio from the Lavabo at east.".
 Main door is a door. It is north of Porch and south of Hall. Main door is closed and locked.
@@ -118,7 +118,7 @@ Dining Room is a room. "The dimly lit room highlights the bright screen of somet
 Dining Room door is a door. It is north of Living room and south of Dining Room. Dining Room door is closed and unlocked.
 
 
-Home Office is a room.  "A Home office like any other ." [MELHORAR DESCRICAO]
+Home Office is a room.  "There is a big window that you can see the outside and in front of it there is big empty table."
 Home office door is a door. It is west of Home Office and east of Living Room. Home office door is closed and locked. The matching key of the Home office door is Spare key. 
 
 
@@ -126,9 +126,9 @@ Stairs is a staircase. It is above Hall and below Upper Hall.
 
 [second floor]
 
-Upper Hall is a room.  
+Upper Hall is a room.  "After going up the stairs you reach another hall. In front of you can see an open door, at your right you see a closed door, at your left you can see another closed door and behind you there is an open door. "
 
-Large Bedroom is a room. 
+Large Bedroom is a room.  "You can see a bed, a bedside table with some clothes on it (coloquei clothes, mas dá para mudar). n the right side of the bedroom you can see a closed windows, and on the left side you can see a door and hear someone taking a shower."
 Large bedroom door is a door. It is north of Upper Hall and south of Large Bedroom. Large bedroom door is open and unlocked.
 
 Inner Bathroom is a room. 
@@ -140,7 +140,7 @@ Medium bedroom door is a door. It is east of Upper Hall and west of Medium Bedro
 Small Bedroom is a room. 
 Small bedroom door is a door. It is west of Upper Hall and east of Small Bedroom. Small bedroom door is closed and locked.
 
-Outter Bathroom is a room. 
+Outter Bathroom is a room.  "It's a small and stinky bathroom. You can see a really dirty shower and seems that someone had diarrhea and forgot to flush."
 Outter Bathroom is south of Upper Hall.
 
 
@@ -211,6 +211,9 @@ Understand "untie [something]" as untying.
 
 CoronelUntied is a truth state that varies. CoronelUntied is false.
 
+Before untying Colonel:
+	say "As soon as you enter in the home office you spot the Colonel in a chair with his hands behind his back."
+
 After untying Colonel:
 	if CoronelUntied is false:
 		now CoronelUntied is true;
@@ -251,13 +254,9 @@ Before taking the Spare Key during Getting Info:
 	Say "You hear a huge noise of someone slamming a door and shouting:
 	
 ``I coudn't get any info from him yet Liutenant, he passed out! You try next! I'm gonna eat something and finish the report!``
-
-And then someone shout back from the room right beside you:
-	
+And then someone shout back from the room right beside you:	
 ``I'll finish here and I'll be there already. Just a sec!``
-
 You freeze by the proximity of the voice and the only thing  you can think about is ``I need to move right now!`` 
-
 ".
 
 	
@@ -265,6 +264,11 @@ After taking the Spare Key:
 	now Private1 is in Dining room;
 	now Sargeant is in Dining room;
 	now Private2 is in Dining room;
+
+Every turn when the location of player is Porch:
+	if player has Spare Key:
+		say "The porch is empty, the soldier that was here is somewhere else, seems a great time to escape!".
+
 	
 Every turn when the location of player is Living room:
 	if Sargeant is in Home office and Colonel is in Home office:
@@ -321,8 +325,6 @@ After examining Colonel during Rescuing Coronel:
 After examining Colonel during Escaping the House:
 	say "He's tired and hurt, but he's following me. Let's get out of this place.";
 	continue the action;
-
+	
 Every turn when the location of player is Porch during Escaping the House:
-	now the description of Porch is "You see no one guarding the exit and you two could escape to safety!";
-	end the story saying "Congratulations! You saved Colonel Nelson! GAME OVER";
-	continue the action;
+	end the story saying "Congratulations! You saved Colonel Nelson! GAME OVER".
