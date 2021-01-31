@@ -129,7 +129,7 @@ Stairs is a staircase. It is above Hall and below Upper Hall.
 
 Upper Hall is a room.  "After going up the stairs you reach another hall. In front of you can see an open door, at your right you see a closed door, at your left you can see another closed door and behind you there is an open door. "
 
-Large Bedroom is a room.  "You can see a bed, a bedside table with some clothes on it (coloquei clothes, mas dá para mudar). n the right side of the bedroom you can see a closed windows, and on the left side you can see a door and hear someone taking a shower."
+Large Bedroom is a room.  "You can see a bed with some clothes on it. In the right side of the bedroom you can see a closed windows, and on the left side you can see a door and hear someone taking a shower."
 Large bedroom door is a door. It is north of Upper Hall and south of Large Bedroom. Large bedroom door is open and unlocked.
 
 Inner Bathroom is a room. 
@@ -215,8 +215,6 @@ CoronelUntied is a truth state that varies. CoronelUntied is false.
 Every turn when The location of player is Home office and CoronelUntied is false:
 	say "As soon as you enter in the home office you spot the Colonel in a chair with his hands behind his back.";
 	display the Figure of Coronel Nelson;
-	
-[###########################################################################################]
 
 After untying Colonel:
 	if CoronelUntied is false:
@@ -252,7 +250,6 @@ Before taking the Main Key during Being Outside the House:
 
 Every turn when the location of player is Large Bedroom and the player does not have Spare Key:
 	display the Figure of Key; 
-	[############################################################################################]
 
 Before taking the Spare Key during Getting Info:
 	Say "You hear a huge noise of someone slamming a door and shouting:
