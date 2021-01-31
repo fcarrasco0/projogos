@@ -25,7 +25,6 @@
 >sw
 ```
 
-Para mais detalhes ver o pdf dentro da pasta inform7.
-
-# Link para o Miro com detalhes gráficos do fluxo do IF:
-https://miro.com/app/board/o9J_lcKgiJ4=/
+### Para mais detalhes 
+<br> ver o pdf dentro da pasta inform7.
+<br> link miro: https://miro.com/app/board/o9J_lcKgiJ4=/
